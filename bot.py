@@ -16,8 +16,7 @@ logger = logging.getLogger(__name__)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "👋 Welcome to CreativeSync AI Bot!
-
+        print("👋 Welcome to CreativeSync AI Bot!")
 "
         "Use /ask <your question> to chat with Llama-3
 "
