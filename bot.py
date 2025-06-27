@@ -18,12 +18,12 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         print("👋 Welcome to CreativeSync AI Bot!")
 
-        "Use /ask <your question> to chat with Llama-3
-"
-        "Use /news for trending news
-"
-        "Use /image <prompt> to generate an image
-"
+        "Use /ask <your question> to chat with Llama-3."
+            
+        "Use /news for trending news"
+
+        "Use /image <prompt> to generate an image"
+
         "Use /help to see this again."
     )
 
