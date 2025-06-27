@@ -64,8 +64,14 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE):
         url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}"
         res = requests.get(url).json()
         articles = res.get("articles", [])[:5]
-        reply = "📰 Top News:\n"
-reply += "\n".join([f"{a.get('title', 'No Title')} - {a.get('url', 'No URL')}" for a in articles])
+        reply = "📰 Top News:\n\n"
+        reply += "\n".join(
+            [f"{a.get('title', 'No Title')} - {a.get('url', 'No URL')}" for a in articles]
+        )
+        await update.message.reply_text(reply)
+
+    except Exception as e:
+        await update.message.reply_text("💥 Error fetching news.")
         await update.message.reply_text(reply)
     except Exception:
         await update.message.reply_text("💥 Error fetching news.")
