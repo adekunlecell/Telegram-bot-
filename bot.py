@@ -15,16 +15,14 @@ logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        print("👋 Welcome to CreativeSync AI Bot!")
-
-        "Use /ask <your question> to chat with Llama-3."
-            
-        "Use /news for trending news"
-
-        "Use /image <prompt> to generate an image"
-
+    welcome_message = (
+        "👋 Welcome to CreativeSync AI Bot!\n"
+        "Use /ask <your question> to chat with Llama-3.\n"
+        "Use /news for trending news\n"
+        "Use /image <prompt> to generate an image\n"
         "Use /help to see this again."
+    )
+    await update.message.reply_text(welcome_message)
     )
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
