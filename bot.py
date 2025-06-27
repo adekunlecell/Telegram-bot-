@@ -67,7 +67,7 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE):
         url = f"https://newsapi.org/v2/top-headlines?country=us&apiKey={NEWS_API_KEY}"
         res = requests.get(url).json()
         articles = res.get("articles", [])[:5]
-        reply = "🗞 Top News:
+        reply = "📰 Top News:\n"
 
 " + "
 
