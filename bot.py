@@ -68,11 +68,7 @@ async def news(update: Update, context: ContextTypes.DEFAULT_TYPE):
         res = requests.get(url).json()
         articles = res.get("articles", [])[:5]
         reply = "📰 Top News:\n"
-
-" + "
-
-".join([f"{a['title']}
-{a['url']}" for a in articles])
+reply += "\n".join([f"{a.get('title', 'No Title')} - {a.get('url', 'No URL')}" for a in articles])
         await update.message.reply_text(reply)
     except Exception:
         await update.message.reply_text("💥 Error fetching news.")
